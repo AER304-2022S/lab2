@@ -1,0 +1,3 @@
+Maximum Load: 974 N
+Midspan Deflection: 4.183 mm
+Mass: 29.1 grams
