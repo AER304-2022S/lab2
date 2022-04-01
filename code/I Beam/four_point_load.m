@@ -1,6 +1,6 @@
 clear
 load("../../data/processed/beams.mat")
-beam = beams.I3;
+beam = beams.I4;
 load = beam.load;
 strain1 = beam.strain_1;
 strain2 = beam.strain_2;
@@ -28,10 +28,10 @@ strain_theo = load*L*y/4/I/E;
 
 figure
 hold on
-plot(load, strain_theo,'black', 'LineStyle', '--')
+plot(load, strain_theo,'black','LineStyle', '--')
 xlabel("Load (N)", "Interpreter", "latex");
 ylabel("Strain", "Interpreter", "latex");
-title("Strain as a function of three-point Load", "Interpreter", "latex");
+title("Strain as a function of Four-point Load", "Interpreter", "latex");
 
 % Strain Gauge 1
 plot(load, strain1, 'b')
@@ -48,4 +48,4 @@ plot(load, strain4, 'g')
 legend('Theoretical strain (on neutral axis at midspan)', 'Strain gauge 1', 'Strain gauge 2', 'Strain gauge 3', 'Strain gauge 4', "location", "Southeast", "Interpreter", "latex");
 
 hold off
-saveas(gcf, 'Three_point_load.pdf')
+saveas(gcf, 'Four_point_load.pdf')
