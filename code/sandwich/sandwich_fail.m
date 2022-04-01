@@ -16,7 +16,8 @@ sigma_f_tens = 600e3;
 
 micro = 4 * b * d * t *sigma_f_comp/L
 core = 2*b*d*tau_c
-wrink = 2 * b * t * d/L * (E_f * E_c * G_c)^1/3
+% wrink = 2 * b * t * d/L * (E_f * E_c * G_c)^1/3 (Not applicable since not
+% honeycomb - Luca)
 indent_elas = b * t *(pi^2 * d * E_f * sigma_c^2/(3*L))^(1/3)
 indent_plas = 2 * b * t*(sigma_c*sigma_f_tens)^(1/2)
 
