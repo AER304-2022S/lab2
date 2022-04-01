@@ -24,28 +24,32 @@ I = sum(A_d_2) + sum(I_i);
 L = 400; % in mm
 y = 38.025; % bottom to Neutral axis in mm
 E = 72000; % MPa 
-strain_theo = load*L*y/4/I/E;
+strain_theo = load*(L/2-30)*y/2/I/E;
+newcolors = {'#0072BD','#D95319','#EDB120','#7E2F8E','#77AC30','#4DBEEE','#A2142F'};
 
 figure
 hold on
 plot(load, strain_theo,'black', 'LineStyle', '--')
-xlabel("Load (N)", "Interpreter", "latex");
-ylabel("Strain", "Interpreter", "latex");
-title("Strain as a function of three-point Load", "Interpreter", "latex");
+set(gca, 'Ydir', 'reverse');
+set(gca, 'Xdir', 'reverse');
+grid;
+xlabel("Load, $P$,(N)", "Interpreter", "latex");
+ylabel("Engineering Strain, $\epsilon$, (mm/mm)", "Interpreter", "latex");
+title("3 Point Loading, Strain vs. Loading Curve", "Interpreter", "latex");
 
 % Strain Gauge 1
-plot(load, strain1, 'b')
+plot(load, strain1,'color', '#7E2F8E')
 
 %Strain Gauge 2
-plot(load, strain2, 'r')
+plot(load, strain2, 'color', '#77AC30')
 
 %Strain Gauge 3
-plot(load, strain3, 'y')
+plot(load, strain3, 'color', '#4DBEEE')
 
 % Strain Gauge 4
-plot(load, strain4, 'g')
+plot(load, strain4, 'color', '#A2142F')
 
-legend('Theoretical strain (on neutral axis at midspan)', 'Strain gauge 1', 'Strain gauge 2', 'Strain gauge 3', 'Strain gauge 4', "location", "Southeast", "Interpreter", "latex");
+legend('Theoretical Engineering Strain', 'Strain gauge 1', 'Strain gauge 2', 'Strain gauge 3', 'Strain gauge 4', "location", "Northwest", "Interpreter", "latex");
 
 hold off
 saveas(gcf, 'Three_point_load.pdf')
