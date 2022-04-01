@@ -1,4 +1,4 @@
-clear
+clear; clc;
 load("../../data/processed/beams.mat")
 beam = beams.I4;
 load = beam.load;
