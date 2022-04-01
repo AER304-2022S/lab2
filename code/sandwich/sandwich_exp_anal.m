@@ -19,7 +19,7 @@ failure_displ = extension(idx);
 plot(extension, MTS)
 set(gca, 'Ydir', 'reverse'); set(gca, 'Xdir', 'reverse'); grid;
 xlabel("Midspan Deflection, $\delta$, (mm)", "Interpreter", "latex")
-ylabel("MTS Load, $P$, (N)", "Interpreter", "latex")
+ylabel("Load, $P$, (N)", "Interpreter", "latex")
 title("Loading of Sandwich Beam", "Interpreter", "latex")
 hold on
 yline(-max_load, "--k", sprintf("%g N", max_load),...
