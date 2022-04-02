@@ -27,7 +27,8 @@ AG_eq = b*d^2*G_c/c;
 
 fail = [micro; core; wrink;indent_elas];
 
+P = min(fail);
 fail = fail/1e3;
-P = min(fail)*1e3;
+
 
 delta = P*L^3/(48*EI_eq) + P*L/(4*AG_eq)
